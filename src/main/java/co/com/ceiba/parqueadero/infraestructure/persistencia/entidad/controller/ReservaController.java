@@ -37,16 +37,17 @@ public class ReservaController {
 	
 	@PostMapping
 	public ResponseEntity<Reserva> registrarEntrada(@RequestBody Reserva reserva) {
-		reservaServicio.registrarEntrada(reserva.getPuesto().getIdPuesto(), reserva.getVehiculo().getIdVehiculo());
-		return new ResponseEntity<>(HttpStatus.CREATED);
+		
+		Reserva reservaDe=reservaServicio.registrarEntrada(reserva.getPuesto().getIdPuesto(), reserva.getVehiculo().getIdVehiculo());
+		return new ResponseEntity<>(reservaDe,HttpStatus.CREATED);
 	}
 	
 	
 	@PatchMapping("/{idReserva}")
 	public ResponseEntity<Reserva> registrarSalida(@PathVariable("idReserva") long idReserva) {
 		
-		reservaServicio.registrarSalida(idReserva);
-		return new ResponseEntity<>(HttpStatus.OK);
+		Reserva reservaMod=reservaServicio.registrarSalida(idReserva);
+		return new ResponseEntity<>(reservaMod,HttpStatus.OK);
 	}
 	
 

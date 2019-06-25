@@ -38,8 +38,7 @@ public class VehiculoController {
 	
 	@PostMapping
 	public ResponseEntity<Vehiculo> registrarVehiculo(@RequestBody Vehiculo vehiculo) {
-		vehiculoService.registrarVehiculo(vehiculo);
-		return new ResponseEntity<>(HttpStatus.CREATED);
+		return new ResponseEntity<>(vehiculoService.registrarVehiculo(vehiculo),HttpStatus.CREATED);
 	}
 	
 	

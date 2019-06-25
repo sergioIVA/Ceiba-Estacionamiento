@@ -45,18 +45,14 @@ public class VehiculoController {
 
 	@Test
 	public void registrarVehiculos() throws Exception {
-		Vehiculo vehiculo = new VehiculoTestBuilder().build();
-		mvc.perform(post("/vehiculo").content(asJsonString(vehiculo)).contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().is2xxSuccessful());
+		
+		 Vehiculo vehiculo = new VehiculoTestBuilder().build();
+		 mvc.perform(post("/vehiculo").content(AbstractRestControllerTest.asJsonString(vehiculo))
+				                       .contentType(MediaType.APPLICATION_JSON))
+				                       .andExpect(status().isCreated());
 
 	}
 
-	private static String asJsonString(final Object obj) {
-		try {
-			return new ObjectMapper().writeValueAsString(obj);
-		} catch (Exception e) {
-			throw new RuntimeException(e);
-		}
-	}
+	
 
 }

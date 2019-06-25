@@ -11,6 +11,7 @@ public class PuestoMapper {
 	
 	
 	public static Puesto toDomain(PuestoEntity entidad) {
+		
 		Puesto dominio = new Puesto();
 		dominio.setIdPuesto(entidad.getIdPuesto());
 		dominio.setEstado(entidad.isEstado());
@@ -19,6 +20,7 @@ public class PuestoMapper {
 	}	
 	
 	public static PuestoEntity toEntity(Puesto dominio) {
+		
 		PuestoEntity entidad = new PuestoEntity();
 		entidad.setIdPuesto(dominio.getIdPuesto());
 		entidad.setEstado(dominio.isEstado());

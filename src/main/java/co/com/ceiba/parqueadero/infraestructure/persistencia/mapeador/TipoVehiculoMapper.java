@@ -9,7 +9,7 @@ public class TipoVehiculoMapper {
 	private TipoVehiculoMapper() {
 	}
 
-	public static TipoVehiculo toDomain(TipoVehiculoEntity entidad) {
+	public static TipoVehiculo toDomain(TipoVehiculoEntity entidad) {	
 		TipoVehiculo dominio = new TipoVehiculo();
 		dominio.setIdTipoVehiculo(entidad.getIdTipoVehiculo());
 		dominio.setNombre(entidad.getTipoVehiculo());

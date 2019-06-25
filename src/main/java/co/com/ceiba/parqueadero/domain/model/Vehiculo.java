@@ -14,7 +14,7 @@ public class Vehiculo {
 	@Override
 	public String toString() {
 		return "Vehiculo [idVehiculo=" + idVehiculo + ", placa=" + placa + ", cilindraje=" + cilindraje
-				+ ", tipoVehiculo= nombre" + tipoVehiculo.getNombre() + "idTipo"+tipoVehiculo.getIdTipoVehiculo()+"]";
+				+ ", tipoVehiculo= nombre: " + tipoVehiculo.getNombre() + "idTipo: "+tipoVehiculo.getIdTipoVehiculo()+"]";
 	}
 	public long getIdVehiculo() {
 		return idVehiculo;

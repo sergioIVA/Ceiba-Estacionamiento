@@ -38,9 +38,24 @@ public class ReservaServicio {
 	public Reserva registrarEntrada(long idPuesto, long idVehiculo) {
 		
 		Puesto puesto = puestoRepositorio.obtenerPuestoPorId(idPuesto);
+		System.out.println("Encontro el puesto"+puesto.toString());
+		
 		Vehiculo vehiculo = vehiculoRepositorio.obtenerVehiculoPorId(idVehiculo);
+		System.out.println("Encontro el vehiculo"+vehiculo.toString());
+		
+		
+		
 		Reserva reserva = parqueaderoService.registrarEntrada(puesto, vehiculo);
+		System.out.println("Genero la reserva"+vehiculo.toString());
+		
+		
 	    puestoRepositorio.cambiarEstadoPuesto(idPuesto);
+	    System.out.println("cambiar estado puesto exitoso");
+	    
+	    
+	    System.out.println("reserva a guardar el tipoVehiculo"+reserva.getVehiculo().getTipoVehiculo().getNombre());
+	    
+	    
 		return reservaRepositorio.registrarEntrada(reserva);
 	}
 	
