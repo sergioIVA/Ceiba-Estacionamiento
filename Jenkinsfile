@@ -3,20 +3,20 @@ pipeline {
 	agent {
 		label 'Slave_Induccion'
 	}
-	//Opciones especÃ­ficas de Pipeline dentro del Pipeline
+	//Opciones específicas de Pipeline dentro del Pipeline
 	options {
-		//Mantener artefactos y salida de consola para el # especÃ­fico de ejecuciones
+		//Mantener artefactos y salida de consola para el # específico de ejecuciones
 		//recientes del Pipeline.
 		buildDiscarder(logRotator(numToKeepStr: '3'))
 		//No permitir ejecuciones concurrentes de Pipeline
 		disableConcurrentBuilds()
 	}
-	//Una secciÃ³n que define las herramientas para â€œautoinstalarâ€� y poner en la PATH
+	//Una sección que define las herramientas para “autoinstalar” y poner en la PATH
 	tools {
-		jdk 'JDK8_Centos' //Preinstalada en la ConfiguraciÃ³n del Master
-		gradle 'Gradle4.5_Centos' //Preinstalada en la ConfiguraciÃ³n del Master
+		jdk 'JDK8_Centos' //Preinstalada en la Configuración del Master
+		gradle 'Gradle4.5_Centos' //Preinstalada en la Configuración del Master
 	}
-	//AquÃ­ comienzan los â€œitemsâ€� del Pipeline
+	//Aquí comienzan los “items” del Pipeline
 	stages{
 		stage('Checkout') {
 			steps{
@@ -25,7 +25,7 @@ pipeline {
 				doGenerateSubmoduleConfigurations: false, extensions: [], gitTool:
 				'Git_Centos', submoduleCfg: [], userRemoteConfigs: [[credentialsId:
 				'GitHub_sertioivan02', url:
-				'https://github.com/sergioIVA/Ceiba-Estacionamiento']]])
+				'https://github.com/sergioIVA/Ceiba-Estacionamiento.git']]])
 				sh 'gradle --b ./build.gradle clean'
 			}
 		}
@@ -54,7 +54,7 @@ pipeline {
 		}
 		stage('Static Code Analysis') {
 			steps{
-				echo '------------>AnÃ¡lisis de cÃ³digo estÃ¡tico<------------'
+				echo '------------>Análisis de código estático<------------'
 				withSonarQubeEnv('Sonar') {
 					sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
 				}
@@ -89,3 +89,4 @@ pipeline {
 		}
 	}
 }
+
