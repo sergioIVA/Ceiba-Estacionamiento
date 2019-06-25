@@ -6,9 +6,19 @@ plugins {
 
 apply plugin: 'io.spring.dependency-management'
 
-group = 'com..co.ceiba'
+group = 'co.com.ceiba'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+	//compileOnly {
+	//	extendsFrom annotationProcessor
+	//}
+}
 
 repositories {
 	mavenCentral()
@@ -21,5 +31,8 @@ dependencies {
     implementation 'com.h2database:h2'
 	implementation 'mysql:mysql-connector-java'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	compile 'io.springfox:springfox-swagger-ui:2.9.2'
+	compile 'io.springfox:springfox-swagger2:2.9.2'
 	
 }
