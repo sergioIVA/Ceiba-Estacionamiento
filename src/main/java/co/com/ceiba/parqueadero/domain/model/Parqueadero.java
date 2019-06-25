@@ -22,6 +22,7 @@ public class Parqueadero {
 		if (!estaLibre(puesto)) {
 			throw new AccesoDenegadoException(PUESTO_OCUPADO);
 		}
+	
 		if (!estaPermitido(vehiculo)) {
 			throw new TipoVehiculoIncompatibleException(VEHICULO_NO_PERMITIDO);
 		}
@@ -43,8 +44,10 @@ public class Parqueadero {
 	}
 
 	public boolean estaPermitido(Vehiculo vehiculo) {
+		System.out.println("metodo esta permitido "+vehiculo.getTipoVehiculo().getNombre());
+		
 		if (vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase("CARRO")
-				&& vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase("MOTO")) {
+				|| vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase("MOTO")) {
 			return true;
 		} else {
 			return false;
@@ -77,6 +80,11 @@ public class Parqueadero {
 		           if(letraBool) {
 		        	   
 	     int dia = fechaIngreso.get(Calendar.DAY_OF_WEEK);
+	     
+	     System.out.println(dia);
+	     System.out.println("domingo"+Calendar.SUNDAY);
+	     System.out.println("lunes"+Calendar.MONDAY);
+	     
 	     
 		return (dia == Calendar.SUNDAY)  ||  (dia == Calendar.MONDAY);
 	     

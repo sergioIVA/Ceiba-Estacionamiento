@@ -30,6 +30,8 @@ public class VehiculoImpl implements VehiculoRepositorio{
 				                       (
 				                       VehiculoMapper::toDomain
 				                       ).collect(Collectors.toList());
+		
+		System.out.println(listVehiculos.size());
 		if (listVehiculos.isEmpty()) {
 			throw new NotContentException("Lista de vehiculos vacia");
 		} else {

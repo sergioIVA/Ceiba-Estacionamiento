@@ -3,6 +3,7 @@ package com.com.ceiba.parqueadero.test.integracion;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,14 +18,14 @@ import org.springframework.web.context.WebApplicationContext;
 
 import com.com.ceiba.parqueadero.test.databuilder.VehiculoTestBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import co.com.ceiba.parqueadero.domain.model.Parqueadero;
+import co.com.ceiba.parqueadero.CeibaEstacionamientoApplication;
 import co.com.ceiba.parqueadero.domain.model.Vehiculo;
 
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = Parqueadero.class)
+@SpringBootTest(classes = CeibaEstacionamientoApplication.class)
 @AutoConfigureMockMvc
-public class VehiculoControllerIntegracion {
+public class VehiculoController {
 	
 	@Autowired
 	private WebApplicationContext context;
@@ -37,7 +38,7 @@ public class VehiculoControllerIntegracion {
 
 	@Test
 	public void listarVehiculos() throws Exception {
-		mvc.perform(get("/vehiculo//listado-vehiculos").contentType(MediaType.APPLICATION_JSON))
+		mvc.perform(get("/vehiculo/listado-vehiculos").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().is2xxSuccessful());
 
 	}

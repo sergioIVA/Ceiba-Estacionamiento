@@ -17,10 +17,13 @@ import org.springframework.web.context.WebApplicationContext;
 import co.com.ceiba.parqueadero.CeibaEstacionamientoApplication;
 
 
+
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = CeibaEstacionamientoApplication.class)
 @AutoConfigureMockMvc
-public class PuestoControllerIntegracion {
+public class PuestoController {
+	
 	
 	@Autowired
 	private WebApplicationContext context;
@@ -32,17 +35,18 @@ public class PuestoControllerIntegracion {
 	}
 
 	@Test
-	public void listarBahias() throws Exception {
+	public void listarPuestos() throws Exception {
 		mvc.perform(get("/puesto/listar-puestos").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().is2xxSuccessful());
 
 	}
 	
 	@Test
-	public void listarBahiasLibres() throws Exception {
+	public void listarPuestosLibres() throws Exception {
 		mvc.perform(get("/puesto/listado-puestos-libres").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().is2xxSuccessful());
 
 	}
+	
 
 }
