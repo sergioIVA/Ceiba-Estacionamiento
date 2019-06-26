@@ -9,13 +9,24 @@ import co.com.ceiba.parqueadero.domain.model.Vehiculo;
 
 
 public class ReservaTestBuilder {
-	
+
+  /** 
 	private static final long ID_RESERVA = 1;
 	private static final Puesto PUESTO = new PuestoTestBuilder().build();
 	private static final Vehiculo VEHICULO = new VehiculoTestBuilder().build();
 	private static final Date FECHA_INGRESO = Calendar.getInstance().getTime();
 	private static final Date FECHA_RETIRO = null;
 	private static final float VALOR = 0;
+ **/
+	
+	
+	private static final long ID_RESERVA = 3;
+	private static final Puesto PUESTO = new PuestoTestBuilder().build();
+	private static final Vehiculo VEHICULO = new VehiculoTestBuilder().build();
+	private static final Date FECHA_INGRESO = Calendar.getInstance().getTime();
+	private static final Date FECHA_RETIRO = null;
+	private static final float VALOR = 0;
+	
 
 	private long idReserva;
 	private Puesto puesto;
@@ -73,6 +84,8 @@ public class ReservaTestBuilder {
 		reserva.setValorTotal(this.valor);
 		return reserva;
 	}
+	
+	
 
 
 }

@@ -4,7 +4,7 @@ import co.com.ceiba.parqueadero.domain.model.Puesto;
 
 public class PuestoTestBuilder {
 	
-	private static final long ID_PUESTO = 1;
+	private static final long ID_PUESTO = 11;
 	private static final boolean ESTADO_PUESTO = true;
 	private static final String TIPO_PUESTO = "CARRO";
 	

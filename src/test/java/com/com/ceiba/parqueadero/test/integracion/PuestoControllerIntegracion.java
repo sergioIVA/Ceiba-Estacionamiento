@@ -30,7 +30,7 @@ import co.com.ceiba.parqueadero.domain.model.Puesto;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = CeibaEstacionamientoApplication.class)
 @AutoConfigureMockMvc
-public class PuestoController {
+public class PuestoControllerIntegracion {
 	
 	
 	@Autowired

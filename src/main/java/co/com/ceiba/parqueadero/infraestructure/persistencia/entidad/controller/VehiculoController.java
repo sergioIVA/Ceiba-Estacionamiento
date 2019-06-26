@@ -32,7 +32,7 @@ public class VehiculoController {
 	}
 	
 	@GetMapping("/{placa}")
-	public ResponseEntity<Vehiculo> consultarPorPlaca(@PathVariable("placaVehiculo") String placaVehiculo){
+	public ResponseEntity<Vehiculo> consultarPorPlaca(@PathVariable("placa") String placaVehiculo){
 		return new ResponseEntity<>(vehiculoService.obtenerVehiculoPorPlaca(placaVehiculo),HttpStatus.OK);
 	}
 	

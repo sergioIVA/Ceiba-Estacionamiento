@@ -4,7 +4,7 @@ import co.com.ceiba.parqueadero.domain.model.TipoVehiculo;
 
 public class TipoVehiculoTestBuilder {
 
-	private static final long ID_TIPO_VEHICULO = 2;
+	private static final long ID_TIPO_VEHICULO = 1;
 	private static final String NOMBRE = "MOTO";
 	
 	private long idTipoVehiculo;

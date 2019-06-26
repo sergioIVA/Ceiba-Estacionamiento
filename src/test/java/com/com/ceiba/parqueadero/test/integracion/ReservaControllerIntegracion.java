@@ -16,43 +16,56 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.com.ceiba.parqueadero.test.databuilder.VehiculoTestBuilder;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.com.ceiba.parqueadero.test.databuilder.ReservaTestBuilder;
+
 import co.com.ceiba.parqueadero.CeibaEstacionamientoApplication;
-import co.com.ceiba.parqueadero.domain.model.Vehiculo;
+import co.com.ceiba.parqueadero.domain.model.Reserva;
+
+
 
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = CeibaEstacionamientoApplication.class)
 @AutoConfigureMockMvc
-public class VehiculoController {
+public class ReservaControllerIntegracion {
 	
 	@Autowired
 	private WebApplicationContext context;
 	private MockMvc mvc;
+	private Reserva reserva;
+	
 
 	@Before
 	public void setUp() {
 		mvc = MockMvcBuilders.webAppContextSetup(context).build();
-	}
-
-	@Test
-	public void listarVehiculos() throws Exception {
-		mvc.perform(get("/vehiculo/listado-vehiculos").contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().is2xxSuccessful());
-
-	}
-
-	@Test
-	public void registrarVehiculos() throws Exception {
+		ReservaTestBuilder reservaTestBuilder=new ReservaTestBuilder();
+		reserva=reservaTestBuilder.build();
 		
-		 Vehiculo vehiculo = new VehiculoTestBuilder().build();
-		 mvc.perform(post("/vehiculo").content(AbstractRestControllerTest.asJsonString(vehiculo))
-				                       .contentType(MediaType.APPLICATION_JSON))
-				                       .andExpect(status().isCreated());
-
 	}
 
+	@Test
+	public void listarReservas() throws Exception {
+		mvc.perform(
+				get("/reserva/listar-reservas").contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+	}
+
+	@Test
+	public void listarReservasPendientes() throws Exception {
+		mvc.perform(get("/reserva/listar-reservas-pendientes").contentType(MediaType.APPLICATION_JSON))
+		                                                      .andExpect(status().isOk());
+	}
 	
+	/**
+	@Test
+	public void registrarEntrada() throws Exception {
+		mvc.perform(post("/reserva").content(AbstractRestControllerTest.asJsonString(reserva))
+				                     .contentType(MediaType.APPLICATION_JSON))
+		                             .andExpect(status().isCreated());
+	}
+    **/ 
+	
+	
+
 
 }
