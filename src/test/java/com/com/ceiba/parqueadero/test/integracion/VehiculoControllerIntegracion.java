@@ -14,6 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -55,12 +56,12 @@ public class VehiculoControllerIntegracion {
 	@Test
 	public void consultarPorPlaca()throws Exception{
 		mvc.perform(get("/vehiculo/"+PLACA).contentType(MediaType.APPLICATION_JSON))
-		                                    .andExpect(jsonPath("$.idVehiculo",equalTo(ID_VEHICULO)))
-		                                    .andExpect(jsonPath("$.placa",equalTo(PLACA)))
-		                                    .andExpect(jsonPath("$.cilindraje",equalTo(CILINDRAJE)))
-		                                    .andExpect(jsonPath("$.tipoVehiculo.idTipoVehiculo",equalTo(ID_TIPO_VEHICULO)))
-		                                    .andExpect(jsonPath("$.tipoVehiculo.nombre",equalTo(NOMBRE)))
-		                                    .andExpect(status().isOk());
+		                                      .andExpect(jsonPath("$.idVehiculo",equalTo(ID_VEHICULO)))
+		                                      .andExpect(jsonPath("$.placa",equalTo(PLACA)))
+		                                      .andExpect(jsonPath("$.cilindraje",equalTo(CILINDRAJE)))
+		                                      .andExpect(jsonPath("$.tipoVehiculo.idTipoVehiculo",equalTo(ID_TIPO_VEHICULO)))
+		                                      .andExpect(jsonPath("$.tipoVehiculo.nombre",equalTo(NOMBRE)))
+		                                      .andExpect(status().isOk());
 		
 	}
 	

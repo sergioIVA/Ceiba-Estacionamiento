@@ -14,7 +14,6 @@ public class Puesto {
 		this.idPuesto = idPuesto;
 	}
 	
-	
 	public boolean isEstado() {
 		return estado;
 	}
