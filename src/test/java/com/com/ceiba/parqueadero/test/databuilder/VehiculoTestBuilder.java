@@ -9,7 +9,7 @@ public class VehiculoTestBuilder {
 	private static final short CILINDRAJE = 110;
 	private static final String PLACA = "RWW111";
 	
-	private static final long EXISTE_ID_VEHICULO = 3;
+	private static final long EXISTE_ID_VEHICULO = 1;
 	private static final String EXISTE_PLACA="BBC312";
 	private static final short EXISTE_CILINDRAJE = 120;
 	

@@ -1,8 +1,10 @@
 package com.com.ceiba.parqueadero.test.integracion;
 
+import static org.hamcrest.Matchers.equalTo;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Before;
@@ -63,7 +65,7 @@ public class ReservaControllerIntegracion {
 		mvc.perform(post("/reserva").content(AbstractRestControllerTest.asJsonString(reserva))
 				                     .characterEncoding("utf-8")
 				                     .contentType(MediaType.APPLICATION_JSON))
-	                                  .andExpect(status().isCreated());
+		                              .andExpect(status().isCreated());
 		                            
 	}
     
