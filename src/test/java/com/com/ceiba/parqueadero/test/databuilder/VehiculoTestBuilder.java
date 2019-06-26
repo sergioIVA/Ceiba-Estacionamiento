@@ -5,9 +5,13 @@ import co.com.ceiba.parqueadero.domain.model.Vehiculo;
 
 public class VehiculoTestBuilder {
 
-	private static final long ID_VEHICULO = 2;
-	private static final String PLACA = "RWW111";
+	private static final long ID_VEHICULO = 3;
 	private static final short CILINDRAJE = 110;
+	private static final String PLACA = "RWW111";
+	
+	private static final long EXISTE_ID_VEHICULO = 3;
+	private static final String EXISTE_PLACA="BBC312";
+	private static final short EXISTE_CILINDRAJE = 120;
 	
 	
 	private static final TipoVehiculo TIPO_VEHICULO = new TipoVehiculoTestBuilder().build();
@@ -44,6 +48,19 @@ public class VehiculoTestBuilder {
 		return this;
 	}
 
+	
+	public Vehiculo vehiculoExistente() {
+		
+		Vehiculo vehiculo = new Vehiculo();
+		vehiculo.setIdVehiculo(EXISTE_ID_VEHICULO);
+		vehiculo.setPlaca(EXISTE_PLACA);
+		vehiculo.setCilindraje(EXISTE_CILINDRAJE);
+		vehiculo.setTipoVehiculo(this.tipoVehiculo);
+		
+		return vehiculo;
+		
+	}
+	
 	public Vehiculo build() {
 		Vehiculo vehiculo = new Vehiculo();
 		vehiculo.setIdVehiculo(this.idVehiculo);

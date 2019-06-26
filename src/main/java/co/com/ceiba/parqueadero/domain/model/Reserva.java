@@ -11,6 +11,8 @@ public class Reserva {
 	private Vehiculo vehiculo;
 	private Puesto puesto;
 	
+	
+	
 	public Long getIdReserva() {
 		return idReserva;
 	}

@@ -13,17 +13,16 @@ import co.com.ceiba.parqueadero.domain.model.Puesto;
 public class PuestoTestUnitario {
 
 	private static final long ID_BAHIA = 1;
-	private static final boolean ESTADO_BAHIA = true;
-	private static final String TIPO_BAHIA = "CARRO";
-
+	private static final boolean ESTADO_PUESTO = true;
+	private static final String TIPO_PUESTO = "CARRO";
 	private Puesto puesto;
 
 	@Test
-	public void crearBahia() {
+	public void crearPuesto() {
 		// arrange
 		PuestoTestBuilder puestoTestBuilder = new PuestoTestBuilder().puestoPorId
-				(ID_BAHIA).puestoPorEstado(ESTADO_BAHIA)
-				.puestoPorTipo(TIPO_BAHIA);
+				(ID_BAHIA).puestoPorEstado(ESTADO_PUESTO)
+				.puestoPorTipo(TIPO_PUESTO);
 		// act
 		puesto = puestoTestBuilder.build();
 		long valor= puesto.getIdPuesto();
@@ -31,7 +30,7 @@ public class PuestoTestUnitario {
 		// assert
 		assertEquals(ID_BAHIA,valor);
 		assertTrue(puesto.isEstado()); 
-		assertEquals(TIPO_BAHIA, puesto.getTipoPuestoVehiculo());		
+		assertEquals(TIPO_PUESTO, puesto.getTipoPuestoVehiculo());		
 	}
 
 	
