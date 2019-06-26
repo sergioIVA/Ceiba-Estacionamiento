@@ -69,7 +69,7 @@ public class parqueaderoTestUnitario {
 	}
 
 	@Test
-	public void permitirAccesoVehiculoCompatibleBahia() {
+	public void permitirAccesoVehiculoCompatiblePuesto() {
 		// arrange
 		PuestoTestBuilder puestoTestBuilder = new PuestoTestBuilder();
 		Puesto puesto = puestoTestBuilder.build();
@@ -102,7 +102,7 @@ public class parqueaderoTestUnitario {
 	}
 
 	@Test
-	public void noPermitirAccesoBahiaOcupada() {
+	public void noPermitirAccesoPuestoOcupada() {
 		// arrange
 		PuestoTestBuilder bahiaTestBuilder = new PuestoTestBuilder();
 		Puesto puesto = bahiaTestBuilder.build();
