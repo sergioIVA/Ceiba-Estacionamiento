@@ -33,45 +33,45 @@ public class ReservaTestBuilder {
 		this.valor = VALOR;
 	}
 	
-	public ReservaTestBuilder obtenerFacturaPorId(long idReserva) {
+	public ReservaTestBuilder obtenerReservaPorId(long idReserva) {
 		this.idReserva = idReserva;
 		return this;
 	}
 
-	public ReservaTestBuilder obtenerFacturaPorBahia(Puesto puesto) {
+	public ReservaTestBuilder obtenerReservaPorPuesto(Puesto puesto) {
 		this.puesto = puesto;
 		return this;
 	}
 
-	public  ReservaTestBuilder obtenerFacturaPorVehiculo(Vehiculo vehiculo) {
+	public  ReservaTestBuilder obtenerReservaPorVehiculo(Vehiculo vehiculo) {
 		this.vehiculo = vehiculo;
 		return this;
 	}
 
-	public ReservaTestBuilder obetnerFacturaPorFechaIngreso(Date fechaIngreso) {
+	public ReservaTestBuilder obetnerReservaPorFechaIngreso(Date fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 		return this;
 	}
 
-	public ReservaTestBuilder obtenerFacturaPorFechaRetiro(Date fechaRetiro) {
+	public ReservaTestBuilder obtenerReservaPorFechaRetiro(Date fechaRetiro) {
 		this.fechaRetiro = fechaRetiro;
 		return this;
 	}
 
-	public ReservaTestBuilder obtenerFacturaPorValor(float valor) {
+	public ReservaTestBuilder obtenerReservaPorValor(float valor) {
 		this.valor = valor;
 		return this;
 	}
 
 	public Reserva build() {
-		Reserva factura = new Reserva();
-		factura.setIdReserva(this.idReserva);
-		factura.setPuesto(this.puesto);
-		factura.setVehiculo(this.vehiculo);
-		factura.setFechaIngreso(this.fechaIngreso);
-		factura.setFechaRetiro(this.fechaRetiro);
-		factura.setValorTotal(this.valor);
-		return factura;
+		Reserva reserva = new Reserva();
+		reserva.setIdReserva(this.idReserva);
+		reserva.setPuesto(this.puesto);
+		reserva.setVehiculo(this.vehiculo);
+		reserva.setFechaIngreso(this.fechaIngreso);
+		reserva.setFechaRetiro(this.fechaRetiro);
+		reserva.setValorTotal(this.valor);
+		return reserva;
 	}
 
 

@@ -11,8 +11,7 @@ public class TipoVehiculoTestUnitario {
 
 	private static final long ID_TIPO_VEHICULO = 2;
 	private static final String NOMBRE = "MOTO";
-
-	private TipoVehiculo tipoVehiculo;
+    private TipoVehiculo tipoVehiculo;
 
 	@Test
 	public void crearTipoVehiculo() {

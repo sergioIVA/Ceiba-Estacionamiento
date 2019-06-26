@@ -23,7 +23,7 @@ public class PuestoController {
 	}
 
 	@GetMapping("/listar-puestos")
-	public ResponseEntity<List<Puesto>> listarBahias() {
+	public ResponseEntity<List<Puesto>> listarPuestos() {
 		return new ResponseEntity<>(puestoService.listarPuestos(), HttpStatus.OK);
 	}
 	

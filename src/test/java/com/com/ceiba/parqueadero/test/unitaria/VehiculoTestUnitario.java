@@ -13,7 +13,7 @@ import co.com.ceiba.parqueadero.domain.model.Vehiculo;
 public class VehiculoTestUnitario {
 	
 	private static final long ID_VEHICULO = 2;
-	private static final String PLACA= "RWW111";
+	private static final String PLACA= "RWW156";
 	private static final short CILINDRAJE = 110;
 	private static final TipoVehiculo TIPO_VEHICULO = new TipoVehiculoTestBuilder().build();
 

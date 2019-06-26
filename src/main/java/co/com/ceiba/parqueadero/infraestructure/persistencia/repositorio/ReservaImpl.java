@@ -43,7 +43,9 @@ public class ReservaImpl implements ReservaRepositorio{
 	public Reserva obtenerReservaPorId(long idReserva) {
 		
 		return ReservaMapper.toDomain(this.reservaJPA.findByIdReserva(idReserva)
-				.orElseThrow(() -> new NotFoundException("La Reserva: " + idReserva + " no fue encontrada")));
+				             .orElseThrow(
+				            		 () -> new NotFoundException("La Reserva: " + 
+				                      idReserva + " no fue encontrada")));
 		
 	}
 

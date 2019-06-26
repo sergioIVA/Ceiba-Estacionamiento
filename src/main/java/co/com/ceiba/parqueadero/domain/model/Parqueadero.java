@@ -16,6 +16,10 @@ public class Parqueadero {
 	private static final String VEHICULO_INCOMPATIBLE_CON_PUESTO = "El vehiculo no puede parquear en este tipo de puesto";
 
 	private static final String ACCESO_DENEGADO_SEGUN_DIA = "No puede parquear su vehiculo en este dia";
+	
+	private static final String CARRO="CARRO";
+	
+	private static final String MOTO="MOTO";
 
 	public Reserva registrarEntrada(Puesto puesto, Vehiculo vehiculo) {
 
@@ -44,10 +48,8 @@ public class Parqueadero {
 	}
 
 	public boolean estaPermitido(Vehiculo vehiculo) {
-		System.out.println("metodo esta permitido "+vehiculo.getTipoVehiculo().getNombre());
-		
-		if (vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase("CARRO")
-				|| vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase("MOTO")) {
+		if (vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(CARRO)
+				|| vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(MOTO)) {
 			return true;
 		} else {
 			return false;
@@ -80,11 +82,6 @@ public class Parqueadero {
 		           if(letraBool) {
 		        	   
 	     int dia = fechaIngreso.get(Calendar.DAY_OF_WEEK);
-	     
-	     System.out.println(dia);
-	     System.out.println("domingo"+Calendar.SUNDAY);
-	     System.out.println("lunes"+Calendar.MONDAY);
-	     
 	     
 		return (dia == Calendar.SUNDAY)  ||  (dia == Calendar.MONDAY);
 	     
@@ -128,7 +125,7 @@ public class Parqueadero {
 			valor += TablaPrecio.devolverValorDia(tipoVehiculo);
 		}
 
-		if (tipoVehiculo.getNombre().equalsIgnoreCase("MOTO") && cilindraje > 500) {
+		if (tipoVehiculo.getNombre().equalsIgnoreCase(MOTO) && cilindraje > 500) {
 			valor += TablaPrecio.devolverValorAdiconal();
 		}
 

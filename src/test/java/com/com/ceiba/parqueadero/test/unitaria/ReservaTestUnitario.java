@@ -21,22 +21,18 @@ public class ReservaTestUnitario {
 	private static final long ID_FACTURA = 1;
 	private static final Puesto PUESTO = new PuestoTestBuilder().build();
 	private static final Vehiculo VEHICULO = new VehiculoTestBuilder().build();
-	//private static final Date FECHA_INGRESO = Calendar.getInstance().getTime();
 	private static final Date FECHA_INGRESO = Calendar.getInstance().getTime();
 	private static final Date FECHA_RETIRO = null;
 	private static final float VALOR = 0;
-
 	private Reserva reserva;
 
 	@Test
-	public void crearFactura() {
-		
-		System.out.println(FECHA_INGRESO);
+	public void crearReserva() {
 		// arrange
-		ReservaTestBuilder facturaTestBuilder = new ReservaTestBuilder().obtenerFacturaPorId(ID_FACTURA)
-				.obtenerFacturaPorBahia(PUESTO).obtenerFacturaPorVehiculo(VEHICULO)
-				.obetnerFacturaPorFechaIngreso(FECHA_INGRESO).obtenerFacturaPorFechaRetiro(FECHA_RETIRO)
-				.obtenerFacturaPorValor(VALOR);
+		ReservaTestBuilder facturaTestBuilder = new ReservaTestBuilder().obtenerReservaPorId(ID_FACTURA)
+				.obtenerReservaPorPuesto(PUESTO).obtenerReservaPorVehiculo(VEHICULO)
+				.obetnerReservaPorFechaIngreso(FECHA_INGRESO).obtenerReservaPorFechaRetiro(FECHA_RETIRO)
+				.obtenerReservaPorValor(VALOR);
 		// act
 		reserva = facturaTestBuilder.build();
 		// assert

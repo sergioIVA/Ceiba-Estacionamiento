@@ -14,7 +14,7 @@ public interface PuestoRepositorio {
 	
 	public Puesto obtenerPuestoPorId(long id);
 	
-	public void cambiarEstadoPuesto(long idBahia);
+	public void cambiarEstadoPuesto(long idPuesto);
 
 
 }
