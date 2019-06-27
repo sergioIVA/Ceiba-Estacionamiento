@@ -3,7 +3,7 @@ package co.com.ceiba.parqueadero.infraestructure.persistencia.mapeador;
 import co.com.ceiba.parqueadero.domain.model.Puesto;
 import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.PuestoEntity;
 
-public class PuestoMapper {
+public final class PuestoMapper {
 
 	private PuestoMapper() {
 		 throw new IllegalStateException("Utility class");

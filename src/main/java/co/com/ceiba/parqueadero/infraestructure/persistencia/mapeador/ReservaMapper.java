@@ -5,7 +5,7 @@ import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.ReservaEnti
 import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.TipoVehiculoEntity;
 import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.VehiculoEntity;
 
-public class ReservaMapper {
+public final class ReservaMapper {
 	
 
 	public static Reserva toDomain(ReservaEntity entidad) {

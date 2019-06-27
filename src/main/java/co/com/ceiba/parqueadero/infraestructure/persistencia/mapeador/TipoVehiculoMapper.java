@@ -3,7 +3,7 @@ package co.com.ceiba.parqueadero.infraestructure.persistencia.mapeador;
 import co.com.ceiba.parqueadero.domain.model.TipoVehiculo;
 import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.TipoVehiculoEntity;
 
-public class TipoVehiculoMapper {
+public final class TipoVehiculoMapper {
 	
 
 	public static TipoVehiculo toDomain(TipoVehiculoEntity entidad) {	

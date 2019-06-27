@@ -4,7 +4,7 @@ import co.com.ceiba.parqueadero.domain.model.Vehiculo;
 import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.TipoVehiculoEntity;
 import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.VehiculoEntity;
 
-public class VehiculoMapper {
+public final class VehiculoMapper {
 	
 
 	public static Vehiculo toDomain(VehiculoEntity entidad) {
