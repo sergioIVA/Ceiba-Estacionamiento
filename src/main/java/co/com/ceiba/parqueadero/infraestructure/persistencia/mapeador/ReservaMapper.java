@@ -1,9 +1,8 @@
 package co.com.ceiba.parqueadero.infraestructure.persistencia.mapeador;
 import co.com.ceiba.parqueadero.domain.model.Reserva;
-import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.PuestoEntity;
 import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.ReservaEntity;
-import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.TipoVehiculoEntity;
-import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.VehiculoEntity;
+
+
 
 public final class ReservaMapper {
 	
