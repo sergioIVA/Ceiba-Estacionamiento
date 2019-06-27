@@ -34,7 +34,7 @@ public class VehiculoEntity {
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "vehiculo")
-	private Set<ReservaEntity> Reserva;
+	private Set<ReservaEntity> reserva;
 
 	public Long getIdVehiculo() {
 		return idVehiculo;
@@ -69,11 +69,11 @@ public class VehiculoEntity {
 	}
 
 	public Set<ReservaEntity> getReserva() {
-		return Reserva;
+		return reserva;
 	}
 
 	public void setReserva(Set<ReservaEntity> reserva) {
-		Reserva = reserva;
+		this.reserva = reserva;
 	}
 
 	
