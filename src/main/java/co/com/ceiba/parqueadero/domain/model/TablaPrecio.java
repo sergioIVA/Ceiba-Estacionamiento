@@ -2,7 +2,7 @@ package co.com.ceiba.parqueadero.domain.model;
 
 
 
-public class TablaPrecio {
+public final class TablaPrecio {
 	
 	private static final float PRECIO_CARRO_HORA = 1000;
 	private static final float PRECIO_CARRO_DIA = 8000;
