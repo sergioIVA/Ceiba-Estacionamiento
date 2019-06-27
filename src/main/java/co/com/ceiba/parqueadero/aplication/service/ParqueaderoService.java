@@ -30,8 +30,7 @@ public class ParqueaderoService {
 		return parqueadero.registrarSalida(reserva, vehiculo);
 	}
 	
-	public float calcularValor(TipoVehiculo tipoVehiculo, short cilindraje,
-			                   Calendar fechaIngreso,Calendar fechaRetiro) {
+	public float calcularValor(TipoVehiculo tipoVehiculo, short cilindraje,Calendar fechaIngreso,Calendar fechaRetiro) {
 		return parqueadero.calcularValor(tipoVehiculo, cilindraje, fechaIngreso, fechaRetiro);
 	}
 	

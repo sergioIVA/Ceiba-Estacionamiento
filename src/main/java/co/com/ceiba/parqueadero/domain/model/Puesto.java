@@ -6,7 +6,7 @@ public class Puesto {
 	private boolean estado;
 	private String tipoPuestoVehiculo;
 	
-	
+
 	public Long getIdPuesto() {
 		return idPuesto;
 	}

@@ -48,21 +48,16 @@ public class Parqueadero {
 	}
 
 	public boolean estaPermitido(Vehiculo vehiculo) {
-		if (vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(CARRO)
-				|| vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(MOTO)) {
+		if(vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(CARRO) 
+		|| vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(MOTO)) {
 			return true;
-		} else {
-			return false;
 		}
+			return false;
+		
 	}
 
 	public boolean estaLibre(Puesto puesto) {
-		
-		if (puesto.isEstado()) {
-			return true;
-		} else {
-			return false;
-		}
+		return puesto.isEstado() ? true : false;
 	}
 
 	public boolean esCompatible(Vehiculo vehiculo, Puesto puesto) {
