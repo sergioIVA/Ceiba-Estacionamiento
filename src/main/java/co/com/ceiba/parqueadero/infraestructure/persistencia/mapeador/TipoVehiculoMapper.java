@@ -5,7 +5,7 @@ import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.TipoVehicul
 
 public final class TipoVehiculoMapper {
 	
-
+  
 	public static TipoVehiculo toDomain(TipoVehiculoEntity entidad) {	
 		TipoVehiculo dominio = new TipoVehiculo();
 		
@@ -14,6 +14,11 @@ public final class TipoVehiculoMapper {
 		
 		return dominio;
 	}
+	
+	  private TipoVehiculoMapper() {
+	    	
+	    }
+		
 	
 	public static TipoVehiculoEntity toEntity(TipoVehiculo dominio) {
 		TipoVehiculoEntity entidad = new TipoVehiculoEntity();

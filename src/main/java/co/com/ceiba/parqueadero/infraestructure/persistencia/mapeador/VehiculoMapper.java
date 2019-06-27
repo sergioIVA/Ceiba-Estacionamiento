@@ -6,6 +6,10 @@ import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.VehiculoEnt
 
 public final class VehiculoMapper {
 	
+	
+     private VehiculoMapper() {
+		
+	}
 
 	public static Vehiculo toDomain(VehiculoEntity entidad) {
 		Vehiculo dominio = new Vehiculo();
