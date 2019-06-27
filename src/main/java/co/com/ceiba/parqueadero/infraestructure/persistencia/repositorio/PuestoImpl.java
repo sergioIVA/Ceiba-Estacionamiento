@@ -8,7 +8,7 @@ import co.com.ceiba.parqueadero.domain.model.Puesto;
 import co.com.ceiba.parqueadero.domain.repositorio.PuestoRepositorio;
 import co.com.ceiba.parqueadero.infraestructure.persistencia.exception.NotContentException;
 import co.com.ceiba.parqueadero.infraestructure.persistencia.mapeador.PuestoMapper;
-import co.com.ceiba.parqueadero.infraestructure.persistencia.exception.NotFoundException;;
+import co.com.ceiba.parqueadero.infraestructure.persistencia.exception.NotFoundException;
 
 
 @Repository
