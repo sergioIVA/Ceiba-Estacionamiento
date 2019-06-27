@@ -9,7 +9,7 @@ public class ReservaMapper {
 	
 	
 	
-	private ReservaMapper() {
+	public ReservaMapper() {
 	}
 	
 	public static Reserva toDomain(ReservaEntity entidad) {

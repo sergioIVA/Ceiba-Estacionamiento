@@ -5,7 +5,7 @@ import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.PuestoEntit
 
 public class PuestoMapper {
 
-	private PuestoMapper() {
+	public PuestoMapper() {
 		
 	}
 	
