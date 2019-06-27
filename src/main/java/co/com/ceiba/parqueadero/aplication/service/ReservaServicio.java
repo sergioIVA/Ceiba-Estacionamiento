@@ -39,9 +39,11 @@ public class ReservaServicio {
 		
 		Puesto puesto = puestoRepositorio.obtenerPuestoPorId(idPuesto);
 		Vehiculo vehiculo = vehiculoRepositorio.obtenerVehiculoPorId(idVehiculo);
-		Reserva reserva = parqueaderoService.registrarEntrada(puesto, vehiculo);
+		Reserva reserva = parqueaderoService.registrarEntrada(puesto, vehiculo);  
 	    puestoRepositorio.cambiarEstadoPuesto(idPuesto);
-		return reservaRepositorio.registrarEntrada(reserva);
+	    
+	    return reservaRepositorio.registrarEntrada(reserva);
+	
 	}
 	
 	public Reserva registrarSalida(long idReserva) {

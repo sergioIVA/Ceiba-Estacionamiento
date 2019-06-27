@@ -28,17 +28,17 @@ public class VehiculoController {
 
 	@GetMapping("/listado-vehiculos")
 	public ResponseEntity<List<Vehiculo>> listarVehiculos() {
-		return new ResponseEntity<>(vehiculoService.listarVehiculos(), HttpStatus.OK);
+		return new ResponseEntity<>(vehiculoService.listarVehiculos(), HttpStatus.OK); //ok
 	}
 	
 	@GetMapping("/{placa}")
 	public ResponseEntity<Vehiculo> consultarPorPlaca(@PathVariable("placa") String placaVehiculo){
-		return new ResponseEntity<>(vehiculoService.obtenerVehiculoPorPlaca(placaVehiculo),HttpStatus.OK);
+		return new ResponseEntity<>(vehiculoService.obtenerVehiculoPorPlaca(placaVehiculo),HttpStatus.OK); //ok
 	}
 	
 	@PostMapping
 	public ResponseEntity<Vehiculo> registrarVehiculo(@RequestBody Vehiculo vehiculo) {
-		return new ResponseEntity<>(vehiculoService.registrarVehiculo(vehiculo),HttpStatus.CREATED);
+		return new ResponseEntity<>(vehiculoService.registrarVehiculo(vehiculo),HttpStatus.CREATED); //ok
 	}
 	
 	

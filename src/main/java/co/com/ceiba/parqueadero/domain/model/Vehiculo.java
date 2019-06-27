@@ -9,6 +9,12 @@ public class Vehiculo {
 	private short cilindraje;
 	private TipoVehiculo tipoVehiculo;
 	
+	@Override
+	public String toString() {
+		return "Vehiculo [idVehiculo=" + idVehiculo + ", placa=" + placa + ", cilindraje=" + cilindraje
+				+ ", idTipoVehiculo=" + tipoVehiculo.getIdTipoVehiculo() +"" + ", nombreVehiculo=" + tipoVehiculo.getNombre() +"]";
+	}
+	
 	public long getIdVehiculo() {
 		return idVehiculo;
 	}

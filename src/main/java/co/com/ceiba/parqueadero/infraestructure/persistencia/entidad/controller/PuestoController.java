@@ -24,12 +24,12 @@ public class PuestoController {
 
 	@GetMapping("/listar-puestos")
 	public ResponseEntity<List<Puesto>> listarPuestos() {
-		return new ResponseEntity<>(puestoService.listarPuestos(), HttpStatus.OK);
+		return new ResponseEntity<>(puestoService.listarPuestos(), HttpStatus.OK);  //ok
 	}
 	
 	@GetMapping("/listado-puestos-libres")
 	public ResponseEntity<List<Puesto>> listarPuestosLibres() {
-		return new ResponseEntity<>(puestoService.listarPuestosLibres(), HttpStatus.OK);
+		return new ResponseEntity<>(puestoService.listarPuestosLibres(), HttpStatus.OK); //ok
 	}
 	
 	

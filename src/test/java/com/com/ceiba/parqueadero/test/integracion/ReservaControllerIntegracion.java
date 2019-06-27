@@ -67,22 +67,20 @@ public class ReservaControllerIntegracion {
 	@Test
 	public void registrarEntrada() throws Exception {
 		mvc.perform(post("/reserva").content(AbstractRestControllerTest.asJsonString(reserva))
-				                      .characterEncoding("utf-8")
+				                     .characterEncoding("utf-8")
 				                     .contentType(MediaType.APPLICATION_JSON))
 		                             .andExpect(jsonPath("$.idReserva").value(reserva.getIdReserva()))
-		                            /**no lo toma**/  //.andExpect(jsonPath("$.fechaIngreso").value(String.valueOf(reserva.getFechaIngreso())))
 		                             .andExpect(jsonPath("$.fechaRetiro").value(reserva.getFechaRetiro()))
 		                             .andExpect(jsonPath("$.valorTotal").value(reserva.getValorTotal()))
 		                             .andExpect(jsonPath("$.vehiculo.idVehiculo").value(reserva.getVehiculo().getIdVehiculo()))
 		                             .andExpect(jsonPath("$.vehiculo.placa").value(reserva.getVehiculo().getPlaca()))
 		                             .andExpect(jsonPath("$.vehiculo.cilindraje").value(String.valueOf(reserva.getVehiculo().getCilindraje())))
 		                             .andExpect(jsonPath("$.vehiculo.tipoVehiculo.idTipoVehiculo").value(reserva.getVehiculo().getTipoVehiculo().getIdTipoVehiculo()))
-		                            /** no lo toma **/ //.andExpect(jsonPath("$.vehiculo.tipoVehiculo.nombre").value("CARRO"))
+		                             .andExpect(jsonPath("$.vehiculo.tipoVehiculo.nombre").value("CARRO"))
 		                             .andExpect(jsonPath("$.puesto.idPuesto").value(reserva.getPuesto().getIdPuesto()))
 		                             .andExpect(jsonPath("$.puesto.estado").value(reserva.getPuesto().isEstado()))
 		                             .andExpect(jsonPath("$.puesto.tipoPuestoVehiculo").value(reserva.getPuesto().getTipoPuestoVehiculo()))
-		                             //.andExpect(status().isCreated())
-		                             .andDo(print());
+		                             .andExpect(status().isCreated());
 		                            
 	}
 	

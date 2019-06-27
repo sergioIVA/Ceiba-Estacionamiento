@@ -21,7 +21,10 @@ import co.com.ceiba.parqueadero.domain.model.Vehiculo;
 
 public class parqueaderoTestUnitario {
 	
-	private static final String PLACA = "RWW111"; 
+	private static final String PLACA = "RWW111";
+	private static final String PLACA_CON_A="BBC123";
+	private static final String MOTO="MOTO";
+	
 
 	@Test
 	public void permitirAccesoPorTipoVehiculo() {
@@ -124,9 +127,9 @@ public class parqueaderoTestUnitario {
 
 		Parqueadero parking = mock(Parqueadero.class);
 
-		when(parking.permitirEntrada("BBC123", fechaIngreso)).thenReturn(true);
+		when(parking.permitirEntrada(PLACA, fechaIngreso)).thenReturn(true);
 		// act
-		boolean perimitido = parking.permitirEntrada("BBC123", fechaIngreso);
+		boolean perimitido = parking.permitirEntrada(PLACA, fechaIngreso);
 		// assert
 		assertTrue(perimitido);
 	}
@@ -139,9 +142,9 @@ public class parqueaderoTestUnitario {
 
 		Parqueadero parking = mock(Parqueadero.class);
 
-		when(parking.permitirEntrada("AAA123", fechaIngreso)).thenReturn(false);
+		when(parking.permitirEntrada(PLACA_CON_A, fechaIngreso)).thenReturn(false);
 		// act
-		boolean perimitido = parking.permitirEntrada("AAA123", fechaIngreso);
+		boolean perimitido = parking.permitirEntrada(PLACA_CON_A, fechaIngreso);
 		// assert
 		assertFalse(perimitido);
 	}
@@ -154,9 +157,9 @@ public class parqueaderoTestUnitario {
 
 		Parqueadero parking = mock(Parqueadero.class);
 
-		when(parking.permitirEntrada("AAA111", fechaIngreso)).thenReturn(true);
+		when(parking.permitirEntrada(PLACA_CON_A, fechaIngreso)).thenReturn(true);
 		// act
-		boolean perimitido = parking.permitirEntrada("AAA111", fechaIngreso);
+		boolean perimitido = parking.permitirEntrada(PLACA_CON_A, fechaIngreso);
 		// assert
 		assertTrue(perimitido);
 	}
@@ -217,7 +220,7 @@ public class parqueaderoTestUnitario {
 		// act
 		TipoVehiculoTestBuilder tipoVehiculoTestBuilder = new TipoVehiculoTestBuilder();
 		TipoVehiculo tipoVehiculo = tipoVehiculoTestBuilder.build();
-		tipoVehiculo.setNombre("MOTO");
+		tipoVehiculo.setNombre(MOTO);
 		VehiculoTestBuilder vehiculoTestBuilder = new VehiculoTestBuilder();
 		Vehiculo vehiculo = vehiculoTestBuilder.obtenerVehiculoPorTipo(tipoVehiculo)
 				.obtenerVehiculoPorCilindraje((short) 1200).build();
@@ -238,7 +241,7 @@ public class parqueaderoTestUnitario {
 		// act
 		TipoVehiculoTestBuilder tipoVehiculoTestBuilder = new TipoVehiculoTestBuilder();
 		TipoVehiculo tipoVehiculo = tipoVehiculoTestBuilder.build();
-		tipoVehiculo.setNombre("MOTO");
+		tipoVehiculo.setNombre(MOTO);
 		VehiculoTestBuilder vehiculoTestBuilder = new VehiculoTestBuilder();
 		Vehiculo vehiculo = vehiculoTestBuilder.obtenerVehiculoPorTipo(tipoVehiculo)
 				.obtenerVehiculoPorCilindraje((short) 1200).build();
@@ -259,7 +262,7 @@ public class parqueaderoTestUnitario {
 		// act
 		TipoVehiculoTestBuilder tipoVehiculoTestBuilder = new TipoVehiculoTestBuilder();
 		TipoVehiculo tipoVehiculo = tipoVehiculoTestBuilder.build();
-		tipoVehiculo.setNombre("MOTO");
+		tipoVehiculo.setNombre(MOTO);
 		VehiculoTestBuilder vehiculoTestBuilder = new VehiculoTestBuilder();
 		Vehiculo vehiculo = vehiculoTestBuilder.obtenerVehiculoPorTipo(tipoVehiculo)
 				.obtenerVehiculoPorCilindraje((short) 1200).build();
@@ -280,7 +283,7 @@ public class parqueaderoTestUnitario {
 		// act
 		TipoVehiculoTestBuilder tipoVehiculoTestBuilder = new TipoVehiculoTestBuilder();
 		TipoVehiculo tipoVehiculo = tipoVehiculoTestBuilder.build();
-		tipoVehiculo.setNombre("MOTO");
+		tipoVehiculo.setNombre(MOTO);
 		VehiculoTestBuilder vehiculoTestBuilder = new VehiculoTestBuilder();
 		Vehiculo vehiculo = vehiculoTestBuilder.obtenerVehiculoPorTipo(tipoVehiculo)
 				.obtenerVehiculoPorCilindraje((short) 1200).build();
@@ -301,7 +304,7 @@ public class parqueaderoTestUnitario {
 		// act
 		TipoVehiculoTestBuilder tipoVehiculoTestBuilder = new TipoVehiculoTestBuilder();
 		TipoVehiculo tipoVehiculo = tipoVehiculoTestBuilder.build();
-		tipoVehiculo.setNombre("MOTO");
+		tipoVehiculo.setNombre(MOTO);
 		VehiculoTestBuilder vehiculoTestBuilder = new VehiculoTestBuilder();
 		Vehiculo vehiculo = vehiculoTestBuilder.obtenerVehiculoPorTipo(tipoVehiculo)
 				.obtenerVehiculoPorCilindraje((short) 1200).build();
@@ -322,7 +325,7 @@ public class parqueaderoTestUnitario {
 		// act
 		TipoVehiculoTestBuilder tipoVehiculoTestBuilder = new TipoVehiculoTestBuilder();
 		TipoVehiculo tipoVehiculo = tipoVehiculoTestBuilder.build();
-		tipoVehiculo.setNombre("MOTO");
+		tipoVehiculo.setNombre(MOTO);
 		VehiculoTestBuilder vehiculoTestBuilder = new VehiculoTestBuilder();
 		Vehiculo vehiculo = vehiculoTestBuilder.obtenerVehiculoPorTipo(tipoVehiculo)
 				.obtenerVehiculoPorCilindraje((short) 1200).build();

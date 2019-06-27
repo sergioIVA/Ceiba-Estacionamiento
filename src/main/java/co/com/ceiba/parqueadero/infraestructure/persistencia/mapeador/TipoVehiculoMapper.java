@@ -11,6 +11,7 @@ public class TipoVehiculoMapper {
 
 	public static TipoVehiculo toDomain(TipoVehiculoEntity entidad) {	
 		TipoVehiculo dominio = new TipoVehiculo();
+		
 		dominio.setIdTipoVehiculo(entidad.getIdTipoVehiculo());
 		dominio.setNombre(entidad.getTipoVehiculo());
 		
@@ -19,8 +20,10 @@ public class TipoVehiculoMapper {
 	
 	public static TipoVehiculoEntity toEntity(TipoVehiculo dominio) {
 		TipoVehiculoEntity entidad = new TipoVehiculoEntity();
+		
 		entidad.setIdTipoVehiculo(dominio.getIdTipoVehiculo());
 		entidad.setTipoVehiculo(dominio.getNombre());
+		
 		return entidad;
 	}
 	

@@ -26,13 +26,13 @@ public class ReservaController {
 
 	@GetMapping("/listar-reservas")
 	public ResponseEntity<List<Reserva>> listarReservas() {
-		return new ResponseEntity<>(reservaServicio.listarReservas(), HttpStatus.OK);
+		return new ResponseEntity<>(reservaServicio.listarReservas(), HttpStatus.OK); //ok
 	}
 
 	
 	@GetMapping("/listar-reservas-pendientes")
 	public ResponseEntity<List<Reserva>> listraReservaPendientes() {
-		return new ResponseEntity<>(reservaServicio.listarReservasPendientes(), HttpStatus.OK);
+		return new ResponseEntity<>(reservaServicio.listarReservasPendientes(), HttpStatus.OK); //ok
 	}
 	
 	@PostMapping
@@ -44,7 +44,7 @@ public class ReservaController {
 	
 	
 	@PatchMapping("/{idReserva}")
-	public ResponseEntity<Reserva> registrarSalida(@PathVariable("idReserva") long idReserva) {
+	public ResponseEntity<Reserva> registrarSalida(@PathVariable("idReserva") long idReserva) {  //ok
 		
 		Reserva reservaMod=reservaServicio.registrarSalida(idReserva);
 		return new ResponseEntity<>(reservaMod,HttpStatus.OK);

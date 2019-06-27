@@ -14,11 +14,12 @@ public class ReservaMapper {
 	
 	public static Reserva toDomain(ReservaEntity entidad) {
 		Reserva dominio = new Reserva();
-		
+			
 		dominio.setIdReserva(entidad.getIdReserva());
 		dominio.setFechaIngreso(entidad.getFechaIngreso());
 		dominio.setFechaRetiro(entidad.getFechaRetiro());
 		dominio.setValorTotal(entidad.getValorTotal());
+		
 		dominio.setPuesto(PuestoMapper.toDomain(entidad.getPuesto()));
 		dominio.setVehiculo(VehiculoMapper.toDomain(entidad.getVehiculo()));
 		
@@ -32,6 +33,7 @@ public class ReservaMapper {
 		entidad.setFechaIngreso(dominio.getFechaIngreso());
 		entidad.setFechaRetiro(dominio.getFechaRetiro());
 		entidad.setValorTotal(dominio.getValorTotal());
+		
 		entidad.setPuesto(PuestoMapper.toEntity(dominio.getPuesto()));
 		entidad.setVehiculo(VehiculoMapper.toEntity(dominio.getVehiculo()));
 		
