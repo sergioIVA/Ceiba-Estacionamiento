@@ -5,6 +5,10 @@ import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.PuestoEntit
 
 public class PuestoMapper {
 
+	private PuestoMapper() {
+		 throw new IllegalStateException("Utility class");
+	}
+	
 	public static Puesto toDomain(PuestoEntity entidad) {
 		
 		Puesto dominio = new Puesto();
