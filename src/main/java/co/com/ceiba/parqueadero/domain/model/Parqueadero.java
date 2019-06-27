@@ -48,11 +48,9 @@ public class Parqueadero {
 	}
 
 	public boolean estaPermitido(Vehiculo vehiculo) {
-		if(vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(CARRO) 
-		|| vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(MOTO)) {
-			return true;
-		}
-			return false;
+		
+	   return vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(CARRO) || 
+		       vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(MOTO);
 		
 	}
 
