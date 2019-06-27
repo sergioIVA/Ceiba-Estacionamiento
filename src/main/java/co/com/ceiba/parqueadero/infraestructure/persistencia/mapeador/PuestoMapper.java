@@ -5,11 +5,6 @@ import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.PuestoEntit
 
 public class PuestoMapper {
 
-	public PuestoMapper() {
-		
-	}
-	
-	
 	public static Puesto toDomain(PuestoEntity entidad) {
 		
 		Puesto dominio = new Puesto();

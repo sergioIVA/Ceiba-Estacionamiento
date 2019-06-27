@@ -7,11 +7,7 @@ import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.VehiculoEnt
 
 public class ReservaMapper {
 	
-	
-	
-	public ReservaMapper() {
-	}
-	
+
 	public static Reserva toDomain(ReservaEntity entidad) {
 		Reserva dominio = new Reserva();
 			
