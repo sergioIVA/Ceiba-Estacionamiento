@@ -57,15 +57,22 @@ public class Parqueadero {
 	}
 
 	public boolean estaLibre(Puesto puesto) {
-		return puesto.isEstado() ? true : false;
+		
+		         if(puesto.isEstado()) {
+		           return true;	 
+		         }
+		         
+		         return false;
+		              
 	}
 
 	public boolean esCompatible(Vehiculo vehiculo, Puesto puesto) {
-		if (vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(puesto.getTipoPuestoVehiculo())) {
+		
+		if(vehiculo.getTipoVehiculo().getNombre().equalsIgnoreCase(puesto.getTipoPuestoVehiculo())) {
 			return true;
-		} else {
-			return false;
-		}
+		} 
+		
+		    return false;
 	}
 	
 	public boolean permitirEntrada(String placa, Calendar fechaIngreso) {

@@ -1,5 +1,8 @@
 package co.com.ceiba.parqueadero.domain.model;
 
+
+
+
 public class Puesto {
 	
 	private Long idPuesto;

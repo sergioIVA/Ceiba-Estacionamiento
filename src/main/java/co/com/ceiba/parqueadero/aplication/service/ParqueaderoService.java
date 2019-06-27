@@ -7,7 +7,7 @@ import co.com.ceiba.parqueadero.domain.model.Parqueadero;
 import co.com.ceiba.parqueadero.domain.model.Puesto;
 import co.com.ceiba.parqueadero.domain.model.Reserva;
 import co.com.ceiba.parqueadero.domain.model.TipoVehiculo;
-import co.com.ceiba.parqueadero.domain.model.Vehiculo;;
+import co.com.ceiba.parqueadero.domain.model.Vehiculo;
 
 @Service
 public class ParqueaderoService {

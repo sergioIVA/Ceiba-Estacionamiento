@@ -13,7 +13,7 @@ public class TablaPrecio {
 	private static final String CARRO="CARRO";
 	
    
-	private TablaPrecio() {}
+	public TablaPrecio() {}
 
 	public static float devolverValorDia(TipoVehiculo tipoVehiculo) {
 	

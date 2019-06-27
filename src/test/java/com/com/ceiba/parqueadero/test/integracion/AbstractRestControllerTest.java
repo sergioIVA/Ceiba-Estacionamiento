@@ -2,7 +2,7 @@ package com.com.ceiba.parqueadero.test.integracion;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class AbstractRestControllerTest {
+public abstract class AbstractRestControllerTest {
 	
 
 	/**
@@ -17,5 +17,8 @@ public class AbstractRestControllerTest {
             throw new RuntimeException(e);
         }
     }
+    
+    
+    
 
 }

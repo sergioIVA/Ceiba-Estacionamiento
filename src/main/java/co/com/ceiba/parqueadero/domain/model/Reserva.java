@@ -11,14 +11,6 @@ public class Reserva {
 	private Vehiculo vehiculo;
 	private Puesto puesto;
 	
-	
-	
-	@Override
-	public String toString() {
-		return "Reserva [idReserva=" + idReserva + ", fechaIngreso=" + fechaIngreso + ", fechaRetiro=" + fechaRetiro
-				+ ", valorTotal=" + valorTotal + ", nombreTipoVehiculo=" + vehiculo.getTipoVehiculo().getNombre() + ", puesto=" + puesto + "]";
-	}
-	
 	public Long getIdReserva() {
 		return idReserva;
 	}
