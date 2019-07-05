@@ -50,6 +50,7 @@ public class PuestoControllerIntegracion {
 	@Test
 	public void listarPuestos() throws Exception {
 		
+		/**
 		List<Puesto> puestos;
 		puestos=new ArrayList(); 
 		
@@ -69,7 +70,7 @@ public class PuestoControllerIntegracion {
 		
 		
 		given(puestoService.listarPuestos()).willReturn(puestos);
-		
+		**/
 		mvc.perform(get("/puesto/listar-puestos").contentType(MediaType.APPLICATION_JSON))
 		.andExpect(status().isOk());
 
@@ -77,7 +78,7 @@ public class PuestoControllerIntegracion {
 	
 	@Test
 	public void listarPuestosLibres() throws Exception {
-		
+		/**
 		List<Puesto> puestos;
 		puestos=new ArrayList(); 
 		
@@ -96,7 +97,7 @@ public class PuestoControllerIntegracion {
 		puestos.add(puesto2);
 		
 		given(puestoService.listarPuestos()).willReturn(puestos);
-		
+		**/
 		
 		mvc.perform(get("/puesto/listado-puestos-libres").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
