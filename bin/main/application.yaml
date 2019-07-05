@@ -1,4 +1,6 @@
 spring:
+   application:
+    name: back-end-Estacionamiento    
    datasource:
       driverClassName: org.h2.Driver
       url: jdbc:h2:mem:Ceiba-Estacionamiento;DB_CLOSE_ON_EXIT=FALSE
@@ -13,4 +15,10 @@ spring:
       console.path: /h2
 server:
    port: 8082
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
   
