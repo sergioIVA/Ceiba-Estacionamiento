@@ -15,6 +15,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
+import com.com.ceiba.parqueadero.test.databuilder.PuestoTestBuilder;
+import com.com.ceiba.parqueadero.test.databuilder.ReservaTestBuilder;
+
 import co.com.ceiba.parqueadero.CeibaEstacionamientoApplication;
 import co.com.ceiba.parqueadero.aplication.service.PuestoService;
 import co.com.ceiba.parqueadero.domain.model.Puesto;
@@ -37,12 +40,18 @@ public class PuestoServiceIntegracion {
 	
 	
     PuestoService puestoService; 
+    
+
 	
+   
+    
 	
 	@Before
 	public void setUp() {
 		mvc = MockMvcBuilders.webAppContextSetup(context).build();
 		this.puestoService=new PuestoService(this.puestoRepositorio);
+		
+	
 		
 	}
 	
@@ -50,29 +59,35 @@ public class PuestoServiceIntegracion {
 	public void listarPuestosService() {
 		
 		
-		List<Puesto> puestos;
-		puestos=new ArrayList(); 
-		
-		Puesto puesto1=new Puesto();
-		puesto1.setIdPuesto(1L);
-		puesto1.setEstado(true);
-		puesto1.setTipoPuestoVehiculo("Carro");
-		
-		
-		Puesto puesto2=new Puesto();
-		puesto2.setIdPuesto(2L);
-		puesto2.setEstado(true);
-		puesto2.setTipoPuestoVehiculo("Moto");
-		
-		puestos.add(puesto1);
-		puestos.add(puesto2);
+		PuestoTestBuilder puestoTestBuilder=new PuestoTestBuilder();
+		 List<Puesto> puestos=puestoTestBuilder.listaPuestos();
 		
 		given(puestoRepositorio.listarPuesto()).willReturn(puestos);
 		
 		
-		assertEquals(2,puestos.size());
+		assertEquals(2,puestoService.listarPuestos().size());
 		
 	}
+	
+	
+	@Test
+	public void listarPuestoLibre() {
+		
+		
+		PuestoTestBuilder puestoTestBuilder=new PuestoTestBuilder();
+		List<Puesto> puestosLibres=puestoTestBuilder.listaPuestosLibres();
+		
+		given(puestoRepositorio.listarPuestoLibre()).willReturn(puestosLibres);
+		
+		
+		assertEquals(false,puestoService.listarPuestosLibres().get(0).isEstado());
+		assertEquals(false,puestoService.listarPuestosLibres().get(1).isEstado());
+		
+		
+	}
+	
+	
+	
 	
 	
 	

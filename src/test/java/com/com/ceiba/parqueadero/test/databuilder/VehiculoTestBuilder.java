@@ -1,5 +1,8 @@
 package com.com.ceiba.parqueadero.test.databuilder;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import co.com.ceiba.parqueadero.domain.model.TipoVehiculo;
 import co.com.ceiba.parqueadero.domain.model.Vehiculo;
 
@@ -58,6 +61,29 @@ public class VehiculoTestBuilder {
 		vehiculo.setTipoVehiculo(this.tipoVehiculo);
 		
 		return vehiculo;
+		
+	}
+	
+	public List<Vehiculo> listadoVehiculos(){
+		
+		List<Vehiculo> vehiculos=new ArrayList<>();
+		
+		Vehiculo vehiculo1=new Vehiculo();
+		vehiculo1.setIdVehiculo(ID_VEHICULO);
+		vehiculo1.setCilindraje(CILINDRAJE);
+		vehiculo1.setPlaca(PLACA);
+		vehiculo1.setTipoVehiculo(TIPO_VEHICULO);
+		
+		Vehiculo vehiculo2=new Vehiculo();
+		vehiculo2.setIdVehiculo(EXISTE_ID_VEHICULO);
+		vehiculo2.setCilindraje(EXISTE_CILINDRAJE);
+		vehiculo2.setPlaca(EXISTE_PLACA);
+		vehiculo2.setTipoVehiculo(TIPO_VEHICULO);
+		
+		vehiculos.add(vehiculo1);
+		vehiculos.add(vehiculo2);
+		
+		return vehiculos;
 		
 	}
 	
