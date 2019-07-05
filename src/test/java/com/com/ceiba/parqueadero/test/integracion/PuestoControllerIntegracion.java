@@ -36,8 +36,8 @@ public class PuestoControllerIntegracion {
 	private WebApplicationContext context;
 	private MockMvc mvc;
 	
-	@MockBean 
-	PuestoService puestoService; 
+	//@MockBean 
+	//PuestoService puestoService; 
 	
 	
 
