@@ -2,9 +2,7 @@ package com.com.ceiba.parqueadero.test.integracion;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.BDDMockito.given;
-
 import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,15 +14,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-
-import com.com.ceiba.parqueadero.test.databuilder.PuestoTestBuilder;
 import com.com.ceiba.parqueadero.test.databuilder.ReservaTestBuilder;
-
 import co.com.ceiba.parqueadero.CeibaEstacionamientoApplication;
 import co.com.ceiba.parqueadero.aplication.service.ParqueaderoService;
-import co.com.ceiba.parqueadero.aplication.service.PuestoService;
 import co.com.ceiba.parqueadero.aplication.service.ReservaServicio;
-import co.com.ceiba.parqueadero.domain.model.Puesto;
 import co.com.ceiba.parqueadero.domain.model.Reserva;
 import co.com.ceiba.parqueadero.domain.repositorio.PuestoRepositorio;
 import co.com.ceiba.parqueadero.domain.repositorio.ReservaRepositorio;

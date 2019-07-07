@@ -1,8 +1,7 @@
 package com.com.ceiba.parqueadero.test.integracion;
 
-import java.util.ArrayList;
-import java.util.List;
 
+import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,10 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-
 import com.com.ceiba.parqueadero.test.databuilder.PuestoTestBuilder;
-import com.com.ceiba.parqueadero.test.databuilder.ReservaTestBuilder;
-
 import co.com.ceiba.parqueadero.CeibaEstacionamientoApplication;
 import co.com.ceiba.parqueadero.aplication.service.PuestoService;
 import co.com.ceiba.parqueadero.domain.model.Puesto;
