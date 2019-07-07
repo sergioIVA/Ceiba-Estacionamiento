@@ -16,6 +16,11 @@ public class VehiculoTestBuilder {
 	private static final String EXISTE_PLACA="BBC312";
 	private static final short EXISTE_CILINDRAJE = 120;
 	
+	private static final long ID_NUEVO=4;
+	private static final String PLACA_NUEVA="BBC212";
+	private static final short CILINDRAJE_NUEVO = 120;
+	
+	
 	
 	private static final TipoVehiculo TIPO_VEHICULO = new TipoVehiculoTestBuilder().build();
 	
@@ -84,6 +89,17 @@ public class VehiculoTestBuilder {
 		vehiculos.add(vehiculo2);
 		
 		return vehiculos;
+		
+	}
+	
+	public Vehiculo buildNuevo() {
+		
+		Vehiculo vehiculo = new Vehiculo();
+		vehiculo.setIdVehiculo(ID_NUEVO);
+		vehiculo.setPlaca(PLACA_NUEVA);
+		vehiculo.setCilindraje(CILINDRAJE_NUEVO);
+		vehiculo.setTipoVehiculo(TIPO_VEHICULO);		
+		return vehiculo;
 		
 	}
 	

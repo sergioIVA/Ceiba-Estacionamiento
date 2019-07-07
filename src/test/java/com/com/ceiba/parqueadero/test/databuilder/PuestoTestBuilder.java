@@ -45,7 +45,7 @@ public class PuestoTestBuilder {
 	public List<Puesto> listaPuestos(){
 		
 		List<Puesto> puestos;
-		puestos=new ArrayList(); 
+		puestos=new ArrayList<>(); 
 		
 		Puesto puesto1=new Puesto();
 		puesto1.setIdPuesto(ID_PUESTO);
@@ -69,7 +69,7 @@ public class PuestoTestBuilder {
 public List<Puesto> listaPuestosLibres(){
 		
 		List<Puesto> puestos;
-		puestos=new ArrayList(); 
+		puestos=new ArrayList<>(); 
 		
 		Puesto puesto1=new Puesto();
 		puesto1.setIdPuesto(ID_PUESTO);

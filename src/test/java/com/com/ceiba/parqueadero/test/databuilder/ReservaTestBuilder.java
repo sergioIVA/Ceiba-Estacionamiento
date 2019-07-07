@@ -15,7 +15,7 @@ public class ReservaTestBuilder {
 	
 	private static final long ID_RESERVA = 3;
 	private static final Puesto PUESTO = new PuestoTestBuilder().build();
-	private static final Vehiculo VEHICULO = new VehiculoTestBuilder().vehiculoExistente();
+	private static final Vehiculo VEHICULO = new VehiculoTestBuilder().buildNuevo();
 	private static final Date FECHA_INGRESO = Calendar.getInstance().getTime();
 	private static final Date FECHA_RETIRO = null;
 	private static final float VALOR = 0;

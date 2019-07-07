@@ -28,8 +28,7 @@ public class PuestoControllerIntegracion {
 	private WebApplicationContext context;
 	private MockMvc mvc;
 	
-	//@MockBean 
-	//PuestoService puestoService; 
+	
 	
 	
 
@@ -42,27 +41,6 @@ public class PuestoControllerIntegracion {
 	@Test
 	public void listarPuestos() throws Exception {
 		
-		/**
-		List<Puesto> puestos;
-		puestos=new ArrayList(); 
-		
-		Puesto puesto1=new Puesto();
-		puesto1.setIdPuesto(1L);
-		puesto1.setEstado(true);
-		puesto1.setTipoPuestoVehiculo("Carro");
-		
-		
-		Puesto puesto2=new Puesto();
-		puesto2.setIdPuesto(2L);
-		puesto2.setEstado(false);
-		puesto2.setTipoPuestoVehiculo("Moto");
-		
-		puestos.add(puesto1);
-		puestos.add(puesto2);
-		
-		
-		given(puestoService.listarPuestos()).willReturn(puestos);
-		**/
 		mvc.perform(get("/puesto/listar-puestos").contentType(MediaType.APPLICATION_JSON))
 		.andExpect(status().isOk());
 
@@ -70,26 +48,6 @@ public class PuestoControllerIntegracion {
 	
 	@Test
 	public void listarPuestosLibres() throws Exception {
-		/**
-		List<Puesto> puestos;
-		puestos=new ArrayList(); 
-		
-		Puesto puesto1=new Puesto();
-		puesto1.setIdPuesto(1L);
-		puesto1.setEstado(true);
-		puesto1.setTipoPuestoVehiculo("Carro");
-		
-		
-		Puesto puesto2=new Puesto();
-		puesto2.setIdPuesto(2L);
-		puesto2.setEstado(true);
-		puesto2.setTipoPuestoVehiculo("Moto");
-		
-		puestos.add(puesto1);
-		puestos.add(puesto2);
-		
-		given(puestoService.listarPuestos()).willReturn(puestos);
-		**/
 		
 		mvc.perform(get("/puesto/listado-puestos-libres").contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());

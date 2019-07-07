@@ -20,7 +20,7 @@ import org.springframework.web.context.WebApplicationContext;
 import com.com.ceiba.parqueadero.test.databuilder.ReservaTestBuilder;
 import co.com.ceiba.parqueadero.CeibaEstacionamientoApplication;
 import co.com.ceiba.parqueadero.domain.model.Reserva;
-
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 
 
@@ -44,13 +44,17 @@ public class ReservaControllerIntegracion {
 	
 	}
 
+	
 	@Test
 	public void listarReservas() throws Exception {
 		mvc.perform(
 				get("/reserva/listar-reservas").contentType(MediaType.APPLICATION_JSON))
 				                               .andExpect(status().isOk());
 	}
+	
 
+
+	
 	@Test
 	public void listarReservasPendientes() throws Exception {
 		mvc.perform(get("/reserva/listar-reservas-pendientes").contentType(MediaType.APPLICATION_JSON))
@@ -77,6 +81,7 @@ public class ReservaControllerIntegracion {
 		                             .andExpect(status().isCreated());
 		                            
 	}
+	
 	
 	@Test 
 	public void registrarSalida()throws Exception{

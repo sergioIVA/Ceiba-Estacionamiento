@@ -6,9 +6,11 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 import co.com.ceiba.parqueadero.domain.model.Reserva;
 import co.com.ceiba.parqueadero.domain.repositorio.ReservaRepositorio;
+import co.com.ceiba.parqueadero.infraestructure.persistencia.entidad.VehiculoEntity;
 import co.com.ceiba.parqueadero.infraestructure.persistencia.exception.NotContentException;
 import co.com.ceiba.parqueadero.infraestructure.persistencia.exception.NotFoundException;
 import co.com.ceiba.parqueadero.infraestructure.persistencia.mapeador.ReservaMapper;
+
 
 
 @Repository
@@ -66,6 +68,19 @@ public class ReservaImpl implements ReservaRepositorio{
 	@Override
 	public Reserva registrarSalida(Reserva reserva) {
 		return ReservaMapper.toDomain(reservaJPA.save(ReservaMapper.toEntity(reserva)));	
+	}
+
+	
+	//metodo creado
+	@Override
+	public List<Reserva> reservasVehiculo(VehiculoEntity v) {
+		// TODO Auto-generated method stub
+		List<Reserva> listaReservaVehiculo=this.reservaJPA.findByVehiculo(v).stream().map
+				                                          (
+				                                        	ReservaMapper::toDomain	  
+				                                          ).collect(Collectors.toList());
+		
+		return listaReservaVehiculo;
 	}
 
 }

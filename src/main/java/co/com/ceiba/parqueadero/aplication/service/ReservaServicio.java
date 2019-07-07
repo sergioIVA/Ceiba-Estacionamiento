@@ -3,12 +3,14 @@ package co.com.ceiba.parqueadero.aplication.service;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
+import co.com.ceiba.parqueadero.domain.exception.AccesoDenegadoException;
 import co.com.ceiba.parqueadero.domain.model.Puesto;
 import co.com.ceiba.parqueadero.domain.model.Reserva;
 import co.com.ceiba.parqueadero.domain.model.Vehiculo;
 import co.com.ceiba.parqueadero.domain.repositorio.PuestoRepositorio;
 import co.com.ceiba.parqueadero.domain.repositorio.ReservaRepositorio;
 import co.com.ceiba.parqueadero.domain.repositorio.VehiculoRepositorio;
+import co.com.ceiba.parqueadero.infraestructure.persistencia.mapeador.VehiculoMapper;
 
 @Service
 public class ReservaServicio {
@@ -17,6 +19,7 @@ public class ReservaServicio {
 	private ReservaRepositorio reservaRepositorio;
 	private PuestoRepositorio puestoRepositorio;
 	private VehiculoRepositorio vehiculoRepositorio;
+	private static final String VEHICULO_CON_RESERVA="Este vehiculo ya tiene asignado un puesto";
 	
 	
 	public ReservaServicio(ParqueaderoService parqueaderoService, ReservaRepositorio reservaRepositorio,
@@ -37,8 +40,20 @@ public class ReservaServicio {
 	
 	public Reserva registrarEntrada(long idPuesto, long idVehiculo) {
 		
-		Puesto puesto = puestoRepositorio.obtenerPuestoPorId(idPuesto);
 		Vehiculo vehiculo = vehiculoRepositorio.obtenerVehiculoPorId(idVehiculo);
+		
+		List<Reserva> listaReservaVehiculos=reservaRepositorio.reservasVehiculo(VehiculoMapper.toEntity(vehiculo));
+		
+		               for(Reserva r:listaReservaVehiculos) {
+		            	   
+		            	        if(r.getFechaRetiro()==null) {
+		            	        	throw new AccesoDenegadoException(VEHICULO_CON_RESERVA);
+		            	        }
+		               }
+		       
+		
+		Puesto puesto = puestoRepositorio.obtenerPuestoPorId(idPuesto);
+		
 		Reserva reserva = parqueaderoService.registrarEntrada(puesto, vehiculo);  
 	    puestoRepositorio.cambiarEstadoPuesto(idPuesto);
 	    
